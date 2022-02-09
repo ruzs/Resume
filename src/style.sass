@@ -1,0 +1,383 @@
+$color_bluelight: #71C1E2
+$color_blue: #00A4D4
+$color_red: #FC8277
+$color_orange: #FABDA2
+$color_yellow: #F7DCB0
+$color_green: #99BA52
+$color_purple: #B54AA5
+
+@mixin size($w,$h)
+  width: $w
+  height: $h
+  
+@mixin marginlr($l: 30px,$r: 30px)
+  margin-left: $l
+  margin-right: $r
+
+@mixin margintb($t: 10px,$b: 10px)
+  margin-top: $t
+  margin-bottom: $b
+
+@mixin center
+  position: relative
+  left: 50%
+  transform: translateX(-50%)
+
+@mixin inbl
+  display: inline-block
+  
+@mixin circle
+  border-radius: 100%
+
+*
+  // border: 1px solid #000
+  box-sizing: border-box
+  vertical-align: top
+  font-family: 圓體-繁
+
+body,html
+  +size(auto,auto)
+  margin: 0
+  border: 0
+
+.Resume
+  +size(auto,auto)
+.container,.footer
+  transform: translateY(60px)
+.header
+  +marginlr
+  position: fixed
+  display: flex
+  justify-content: space-between
+  padding: 10px
+  z-index: 1
+  top: 0
+  right: 0
+  left: 0
+  border-bottom: 1px solid #ddd
+  background-color: #fff
+  .icon_sm
+    +size(50px,50px)
+    +circle
+    background-image: url(https://scontent.ftpe8-1.fna.fbcdn.net/v/t1.6435-9/57564687_2624661954229489_6329819133219176448_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=4SxZazQ9khMAX_mmRUY&_nc_ht=scontent.ftpe8-1.fna&oh=00_AT-x8jCQm8Otgp5Af2S1rSt-14puMRGncwiYnM7wepVE_w&oe=620D3245)
+    background-size: cover
+  .project_g
+    border-radius: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    .project_block
+      margin: 0px 10px
+      padding: 5px 15px
+      border-radius: 4px
+      text-align: center
+      font-size: 23px
+      text-decoration: none
+      transition-duration: 0.2s
+      &:link
+        color: #000
+      &:visited
+        color: #777
+      &:hover
+        background-color: #94512F
+        color: #fff
+        border-radius: 12px
+      &:active
+        transition-duration: 0s
+        color: $color_blue
+  .cross
+    display: flex
+    cursor: pointer
+    border-radius: 5px
+    width: 45px
+    height: 45px
+    align-items: center
+    justify-content: center
+    background-color: orange
+    transition-duration: 0.5s
+    position: relative
+    &:hover
+      // background-color: #FC8277
+      // .line1,.line3
+      //   width: 40px
+      // .line1
+      //   transform: translateX(-50%) translateY(-50%) rotate(45deg)
+      // .line2
+      //   opacity: 0
+      // .line3
+      //   transform: translateX(-50%) translateY(-50%) rotate(-45deg)
+    .line1,.line2,.line3
+      width: 30px
+      height: 5px
+      border-radius: 2px
+      position: absolute
+      top:50%
+      left: 50%
+      transform: translateX(-50%) translateY(-50%)
+      transition-duration: 0.5s
+      background-color: white
+    .line1
+      transform: translateX(-50%) translateY(-250%)
+    .line3
+      transform: translateX(-50%) translateY(150%)
+
+.widget_title
+  +size(120px,auto)
+  +center
+  padding-top: 10px
+  padding-bottom: 5px
+  display: block
+  position: relative
+  text-align: center
+  border-top: 1px solid $color_red
+  border-bottom: 1px solid $color_red
+p
+  +size(70%,auto)
+  +center
+  text-align: center
+  position: relative
+  color: #666
+
+.container
+  +size(auto,100%)
+  +marginlr
+  .top
+    +size(auto,auto)
+    .icon_main
+      display: block
+      +center
+      +margintb(50px,20px)
+      +size(350px,350px)
+      +circle
+
+  .middle
+    position: relative
+    +inbl
+    font-size: 0
+    +size(100%,auto)
+    .left
+      +inbl
+      +size(50%,800px)
+      .widget_title
+        +size(130px,auto)
+        font-size: 24px
+      .timeline
+        display: block
+        +size(50%,640px)
+        margin-top: 45px
+        border-left: 3px solid #ccc
+        position: relative
+        left: 50%
+        transform: translateX(-180px)
+        .timer
+          +size(30px,30px)
+          +circle
+          transform: translateX(-55%)
+          background-color: $color_green
+          .subtitle
+            +size(300px,auto)
+            transform: translateX(45px)
+            border-radius: 10px
+            font-size: 20px
+            text-align: center
+            background-color: $color_green
+            color: #fff
+            
+          .pa
+            +size(280px,auto)
+            transform: translateX(25%)
+            padding: 5px
+            margin-top: 10px
+            font-size: 16px
+            color: #666
+            
+        .b
+          margin-top: 80px
+
+
+    .right
+      +inbl
+      +size(50%,800px)
+      border-left: 1px solid #ddd
+      
+      .widget_title
+        +size(60px,auto)
+        font-size: 24px
+        
+      li
+        +size(auto,auto)
+        color: #666
+        display: inline-block
+        font-size: 20px
+        margin-left: 5%
+        list-style: none
+        min-width: 85px
+      .line
+        +size(90%,30px)
+        margin: 20px
+        +inbl
+        border-radius: 15px
+        border: 1px solid #ccc
+        background-color: #fff
+        
+        .linebar
+          +inbl
+          position: relative
+          border-radius: 15px
+          background-color: #71C1E2
+          &:hover .linebar_s
+            transition-delay: 0s
+            transition-duration: 0.1s
+            width: 100%
+            opacity: 1
+          
+          .linebar_s
+            +size(10px,100%)
+            +inbl
+            color: #fff
+            font-size: 16px
+            text-align: center
+            border-radius: 15px
+            transition-duration: 0.5s
+            opacity: 0
+            background-color: #00A4D4
+            transition-duration: 0.5s
+            transition-delay: 2s
+        
+        .html
+          +size(70%,100%)
+        .css
+          +size(70%,100%)
+        .js
+          +size(60%,100%)
+        .rwd
+          +size(80%,100%)
+        .bt
+          +size(60%,100%)
+        .vue
+          +size(50%,100%)
+        .git
+          +size(60%,100%)
+
+          
+  .bottom
+    +size(100%,100%)
+    position: relative
+    .widget_title
+      +size(110px,auto)
+    .piechart_g
+      +size(100%,100%)
+      +inbl
+      text-align: center
+      .piename
+        +size(32%,100%)
+        +inbl
+        color: #666
+        padding: 30px
+        
+      .piechart
+        +size(250px,250px)
+        +circle
+        position: absolute
+        +center
+        +margintb(20px,0px)
+        overflow: hidden
+        background-color: lighten($color_purple,30)
+        &:hover .inside
+          transition-delay: 0s
+          transition-duration: 0.3s
+          top: 25px
+          opacity: 1
+        
+        .inside
+          +size(200px,200px)
+          +circle
+          +center
+          top: 45px
+          position: absolute
+          background-color: darken($color_purple,10)
+          transition-duration: 0.5s
+          transition-delay: 2s
+          opacity: 0
+          .iname
+            +size(auto,auto)
+            position: absolute
+            font-size: 130px
+            left: 50%
+            transform: translateX(-50%)
+            color: darken($color_yellow,20)
+            
+        .block
+          +size(50%,50%)
+          transition-duration: 0.5s
+          transform-origin: 100% 100%
+          transform: rotate(90deg)
+          background-color: $color_purple
+          position: absolute
+        .tan1
+          transform: rotate(144deg)
+        .eng1
+          transform: rotate(180deg)
+        .jpn1
+          transform: rotate(180deg)
+        .jpn2
+          transform: rotate(270deg)
+        .jpn3
+          transform: rotate(288deg)
+
+.footer
+  display: block
+  +size(auto,auto)
+  font-size: 0px
+  .block1
+    +inbl
+    +size(25%,100px)
+    padding-top: 25px
+    padding-left: 25px
+    border-right: 1px solid lighten(#86635A,5)
+    background-color: #86635A
+    .footer_subtitle
+      font-size: 18px
+      color: lighten(#86635A,40)
+      font-weight: bold
+      .content
+        font-size: 14px
+        font-weight: normal
+  
+@media screen and (max-width: 850px)
+  .project_g
+    display: flex
+    position: absolute
+    width: 40%
+    right: 0
+    bottom: 0
+    flex-direction: column
+    transform: translateY(105%)
+    background-color: lighten($color_green,10)
+  .container .middle .left
+    width: 100%
+  .container .middle .right
+    width: 100%
+    border: 0
+  .container .bottom .piechart_g .piename
+    width: 100%
+  .footer .block1
+    width: 50%
+    border: 0
+  
+
+@media screen and(max-width: 420px)
+  .project_g
+    width: 100%
+  .container .top .icon_main
+    +size(250px,250px)
+  .container .middle .left .timeline
+    transform: translateX(-120px)
+  .container .middle .left .timeline .timer .subtitle
+    width: 220px
+  .container .middle .left .timeline .timer .pa
+    width: 210px
+  .footer .block1
+    width: 100%
+  
+  
