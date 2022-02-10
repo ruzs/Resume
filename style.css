@@ -388,11 +388,24 @@ p {
   display: inline-block;
   width: 25%;
   height: 100px;
-  padding-top: 25px;
   padding-left: 25px;
   border-right: 1px solid #956e64;
+  border-bottom: 1px solid #956e64;
   background-color: #86635A;
 }
+
+.footer .block1 i{
+  color: #ded1ce;
+  font-size: 17px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.footer .block1  i.fa-brands.fa-github-square{
+  font-size: 20px;
+  padding-bottom: 7px;
+}
+
 .footer .block1 .footer_subtitle {
   font-size: 18px;
   color: #ded1ce;
@@ -401,6 +414,11 @@ p {
 .footer .block1 .footer_subtitle .content {
   font-size: 14px;
   font-weight: normal;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color: #ded1ce;
 }
 
 @media screen and (max-width: 850px) {
